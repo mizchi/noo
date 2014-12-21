@@ -1,3 +1,19 @@
+# Noo
+
+Agnostic mock by es6 proxy.
+
+```
+$ npm install noo --save
+```
+
+## How to use
+
+Noo needs `--harmony` option
+
+```
+$ node --harmony main.js
+$ coffee --nodejs --harmony main.js
+```
 
 ## API
 
