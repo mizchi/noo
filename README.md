@@ -1,6 +1,6 @@
 # Noo
 
-Agnostic mock by es6 proxy.
+Agnostic mock object with reporter by es6 proxy.
 
 ```
 $ npm install noo --save
@@ -15,22 +15,26 @@ $ node --harmony main.js
 $ coffee --nodejs --harmony main.js
 ```
 
+```javascript
+var Noo = require('noo');
+var mock = Noo.createMock();
+```
+
 ## API
 
 - `Noo.createMock(): Mock`
-- `Noo.getChildReport(report, keys: string[]): Report;`
+- `Noo.getChildReport(report, keys: string[]): Report`
 - `Noo.getProp(mock, keys: string[]): any`
 
 ## Example
 
 ```coffee
 mock = Noo.createMock();
-mock.it.allows.eternal.property.access.and.callable().so.enjoy()
-mock(1)
-mock.it()
-mock.it.allows()
-
-console.log util.inspect mock.report(), false, null
+mock.it.allows.eternal.property.access.and.callable().so.enjoy();
+mock(1);
+mock.it();
+mock.it.allows();
+console.log(util.inspect mock.report(), false, null);
 ```
 
 Dump
