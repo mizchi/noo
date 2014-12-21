@@ -23,18 +23,23 @@ var mock = Noo.createMock();
 ## API
 
 - `Noo.createMock(): Mock`
-- `Noo.getChildReport(report, keys: string[]): Report`
-- `Noo.getProp(mock, keys: string[]): any`
+- `Noo.getChildReport(report, ...keys: string[]): Report`
+- `Noo.getProp(mock, ...keys: string[]): any`
 
 ## Example
 
 ```coffee
+var Noo = require('noo');
 mock = Noo.createMock();
 mock.it.allows.eternal.property.access.and.callable().so.enjoy();
 mock(1);
 mock.it();
+mock.everyelse.assignable = {};
+mock.it.is.three = 3;
 mock.it.allows();
-console.log(util.inspect mock.report(), false, null);
+
+var util = require('util');
+console.log(util.inspect(mock.report(), false, null));
 ```
 
 Dump
